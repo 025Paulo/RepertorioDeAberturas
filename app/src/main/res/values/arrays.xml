@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="aberturas_nomes">
+        <item>Defesa Siciliana</item>
+        <item>Ruy Lopez</item>
+        <item>Defesa Francesa</item>
+        <item>Defesa Caro-Kann</item>
+        <item>Gambito da Dama</item>
+        <item>Defesa Índia do Rei</item>
+        <item>Abertura Inglesa</item>
+        <item>Defesa Pirc</item>
+        <item>Sistema Londres</item>
+        <item>Escocesa</item>
+    </string-array>
+
+    <string-array name="aberturas_cores">
+        <item>Pretas</item>
+        <item>Brancas</item>
+        <item>Pretas</item>
+        <item>Pretas</item>
+        <item>Brancas</item>
+        <item>Pretas</item>
+        <item>Brancas</item>
+        <item>Pretas</item>
+        <item>Brancas</item>
+        <item>Brancas</item>
+    </string-array>
+
+    <string-array name="aberturas_categorias">
+        <item>Semiaberta</item>
+        <item>Aberta</item>
+        <item>Semiaberta</item>
+        <item>Semiaberta</item>
+        <item>Fechada</item>
+        <item>Fechada</item>
+        <item>Flanco</item>
+        <item>Semiaberta</item>
+        <item>Sistema</item>
+        <item>Aberta</item>
+    </string-array>
+
+    <string-array name="aberturas_observacoes">
+        <item>Pressão no centro e jogo tático.</item>
+        <item>Desenvolvimento rápido e pressão na ala do rei.</item>
+        <item>Estrutura sólida com ruptura c5.</item>
+        <item>Defesa sólida e estratégica.</item>
+        <item>Luta pelo centro com peões c e d.</item>
+        <item>Fianqueto e ataque no centro.</item>
+        <item>Controle flexível das casas centrais.</item>
+        <item>Desenvolvimento flexível e contragolpe.</item>
+        <item>Sistema simples e prático.</item>
+        <item>Desenvolvimento ativo e aberto.</item>
+    </string-array>
+
+    <string-array name="aberturas_gambito">
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+    </string-array>
+</resources>
