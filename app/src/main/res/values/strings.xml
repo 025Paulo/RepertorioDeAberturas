@@ -1,16 +1,49 @@
 <resources>
     <string name="app_name">Chess Opening Repertoire</string>
+
+    <!-- Títulos de tela -->
     <string name="titulo_cadastro">Register Opening</string>
     <string name="titulo_editar">Edit Opening</string>
     <string name="titulo_configuracoes">Settings</string>
     <string name="titulo_lista">Openings List</string>
     <string name="titulo_sobre">About</string>
+
+    <!-- Botões -->
+    <string name="btn_adicionar">Add</string>
+    <string name="btn_sobre">About</string>
+    <string name="btn_salvar">Save</string>
+    <string name="btn_limpar">Clear</string>
     <string name="adicionar">Add</string>
     <string name="sobre">About</string>
     <string name="configuracoes">Settings</string>
     <string name="editar">Edit</string>
     <string name="excluir">Delete</string>
     <string name="cancelar">Cancel</string>
+
+    <!-- Formulário labels -->
+    <string name="label_nome">Opening Name</string>
+    <string name="label_cor">Repertoire Color</string>
+    <string name="label_categoria">Category</string>
+    <string name="label_gambito">Includes Gambit</string>
+    <string name="label_observacoes">Notes</string>
+    <string name="radio_brancas">White</string>
+    <string name="radio_pretas">Black</string>
+
+    <!-- Categorias do Spinner -->
+    <string name="cat_open">Open Game (1.e4 e5)</string>
+    <string name="cat_semi_open">Semi-Open (1.e4 others)</string>
+    <string name="cat_closed">Closed Game (1.d4)</string>
+    <string name="cat_indian_defense">Indian Defense</string>
+    <string name="cat_other">Other</string>
+
+    <!-- Item da lista (AberturaAdapter) -->
+    <string name="item_color">Color: %s</string>
+    <string name="item_category">Category: %s</string>
+    <string name="item_with_gambit">With Gambit</string>
+    <string name="item_without_gambit">No Gambit</string>
+    <string name="item_notes">Notes: %s</string>
+
+    <!-- Diálogos e mensagens -->
     <string name="confirmar_exclusao">Confirm deletion</string>
     <string name="mensagem_exclusao">Delete \"%s\"?</string>
     <string name="abertura_salva">Opening saved!</string>
@@ -18,6 +51,8 @@
     <string name="formulario_limpo">Form cleared!</string>
     <string name="erro_nome">Error: enter the opening name.</string>
     <string name="erro_cor">Error: select the repertoire color.</string>
+
+    <!-- Configurações -->
     <string name="ordenar_por">Sort list by:</string>
     <string name="ordenar_nome">Name (A-Z)</string>
     <string name="ordenar_categoria">Category</string>

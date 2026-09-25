@@ -15,7 +15,8 @@
         <activity
             android:name=".ListaAberturasActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,19 +27,24 @@
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".ListaAberturasActivity" />
+            android:parentActivityName=".ListaAberturasActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
         <activity
             android:name=".ConfiguracoesActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".ListaAberturasActivity" />
+            android:parentActivityName=".ListaAberturasActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            />
 
         <activity
             android:name=".SobreActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".ListaAberturasActivity" />
+            android:parentActivityName=".ListaAberturasActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+
 
     </application>
 

@@ -3,45 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Repertório de Aberturas"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="12dp" />
+    android:paddingTop="?attr/actionBarSize">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAberturas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="12dp" />
+        android:padding="8dp"
+        android:clipToPadding="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="2">
+        android:padding="12dp"
+        android:weightSum="2"
+        android:elevation="4dp"
+        android:background="@android:color/white">
 
         <Button
             android:id="@+id/btnAdicionar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginEnd="4dp"
-            android:text="Adicionar" />
+            android:layout_marginEnd="6dp"
+            android:text="@string/btn_adicionar" />
 
         <Button
             android:id="@+id/btnSobre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="4dp"
-            android:text="Sobre" />
+            android:layout_marginStart="6dp"
+            android:text="@string/btn_sobre" />
 
     </LinearLayout>
-
 </LinearLayout>
