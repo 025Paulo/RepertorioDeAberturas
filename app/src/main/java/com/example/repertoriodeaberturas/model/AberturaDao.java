@@ -12,17 +12,20 @@ import java.util.List;
 public interface AberturaDao {
 
     @Insert
-    long inserir(Abertura abertura);
+    void inserir(Abertura abertura);
 
     @Update
     void atualizar(Abertura abertura);
 
     @Delete
-    void excluir(Abertura abertura);
+    void deletar(Abertura abertura);
+
+    @Query("SELECT * FROM aberturas WHERE id = :id")
+    Abertura buscarPorId(int id);
 
     @Query("SELECT * FROM aberturas ORDER BY nome ASC")
-    List<Abertura> listarTodas();
+    List<Abertura> listarPorNome();
 
-    @Query("SELECT * FROM aberturas WHERE id = :id LIMIT 1")
-    Abertura buscarPorId(int id);
+    @Query("SELECT * FROM aberturas ORDER BY categoria ASC")
+    List<Abertura> listarPorCategoria();
 }

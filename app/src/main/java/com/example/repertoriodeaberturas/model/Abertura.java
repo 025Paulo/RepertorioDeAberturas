@@ -11,38 +11,63 @@ public class Abertura {
 
     private String nome;
     private String cor;
-    private String eco;
-    private String variante;
-    private String dificuldade;
+    private String categoria;
+    private boolean gambito;
     private String observacoes;
 
-    public Abertura(String nome, String cor, String eco, String variante, String dificuldade, String observacoes) {
+    public Abertura(String nome, String cor, String categoria, boolean gambito, String observacoes) {
         this.nome = nome;
         this.cor = cor;
-        this.eco = eco;
-        this.variante = variante;
-        this.dificuldade = dificuldade;
+        this.categoria = categoria;
+        this.gambito = gambito;
         this.observacoes = observacoes;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getCor() { return cor; }
-    public void setCor(String cor) { this.cor = cor; }
+    public String getNome() {
+        return nome;
+    }
 
-    public String getEco() { return eco; }
-    public void setEco(String eco) { this.eco = eco; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public String getVariante() { return variante; }
-    public void setVariante(String variante) { this.variante = variante; }
+    public String getCor() {
+        return cor;
+    }
 
-    public String getDificuldade() { return dificuldade; }
-    public void setDificuldade(String dificuldade) { this.dificuldade = dificuldade; }
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
 
-    public String getObservacoes() { return observacoes; }
-    public void setObservacoes(String observacoes) { this.observacoes = observacoes; }
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public boolean isGambito() {
+        return gambito;
+    }
+
+    public void setGambito(boolean gambito) {
+        this.gambito = gambito;
+    }
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
 }
