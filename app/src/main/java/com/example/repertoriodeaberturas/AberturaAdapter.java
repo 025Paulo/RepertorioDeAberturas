@@ -1,10 +1,9 @@
 package com.example.repertoriodeaberturas;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupMenu;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,40 +38,37 @@ public class AberturaAdapter extends RecyclerView.Adapter<AberturaAdapter.Abertu
         holder.txtNome.setText(a.getNome());
         holder.txtCor.setText(activity.getString(R.string.item_color, a.getCor()));
         holder.txtEco.setText(activity.getString(R.string.item_category, a.getCategoria()));
-        holder.txtVariante.setText(a.isGambito()
-                ? activity.getString(R.string.item_with_gambit)
-                : activity.getString(R.string.item_without_gambit));
-        holder.txtDificuldade.setText(activity.getString(
-                R.string.item_notes,
-                a.getObservacoes().isEmpty() ? "-" : a.getObservacoes()
-        ));
+        holder.txtVariante.setText(
+                a.isGambito()
+                        ? activity.getString(R.string.item_with_gambit)
+                        : activity.getString(R.string.item_without_gambit)
+        );
+        holder.txtDificuldade.setText(
+                activity.getString(
+                        R.string.item_notes,
+                        a.getObservacoes().isEmpty() ? "-" : a.getObservacoes()
+                )
+        );
+
+        holder.btnEditar.setContentDescription(
+                activity.getString(R.string.editar) + " " + a.getNome()
+        );
+        holder.btnExcluir.setContentDescription(
+                activity.getString(R.string.excluir) + " " + a.getNome()
+        );
+
+        holder.btnEditar.setOnClickListener(v -> activity.editarAbertura(a));
+        holder.btnExcluir.setOnClickListener(v -> activity.confirmarExclusao(a));
 
         holder.itemView.setOnLongClickListener(v -> {
-            PopupMenu popup = new PopupMenu(activity, holder.itemView);
-            popup.getMenuInflater().inflate(R.menu.menu_contextual, popup.getMenu());
-
-            popup.setOnMenuItemClickListener(item -> {
-                int id = item.getItemId();
-
-                if (id == R.id.action_editar) {
-                    activity.editarAbertura(a);
-                    return true;
-                } else if (id == R.id.action_excluir) {
-                    activity.confirmarExclusao(a);
-                    return true;
-                }
-
-                return false;
-            });
-
-            popup.show();
+            activity.iniciarMenuContextual(a);
             return true;
         });
     }
 
     @Override
     public int getItemCount() {
-        return lista.size();
+        return lista != null ? lista.size() : 0;
     }
 
     public void atualizarLista(List<Abertura> novaLista) {
@@ -82,6 +78,7 @@ public class AberturaAdapter extends RecyclerView.Adapter<AberturaAdapter.Abertu
 
     static class AberturaViewHolder extends RecyclerView.ViewHolder {
         TextView txtNome, txtCor, txtEco, txtVariante, txtDificuldade;
+        ImageButton btnEditar, btnExcluir;
 
         public AberturaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +87,8 @@ public class AberturaAdapter extends RecyclerView.Adapter<AberturaAdapter.Abertu
             txtEco = itemView.findViewById(R.id.txtEco);
             txtVariante = itemView.findViewById(R.id.txtVariante);
             txtDificuldade = itemView.findViewById(R.id.txtDificuldade);
+            btnEditar = itemView.findViewById(R.id.btnEditar);
+            btnExcluir = itemView.findViewById(R.id.btnExcluir);
         }
     }
 }
