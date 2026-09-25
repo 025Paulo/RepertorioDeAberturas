@@ -1,43 +1,63 @@
 package com.example.repertoriodeaberturas;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class AberturaAdapter extends ArrayAdapter<Abertura> {
+import com.example.repertoriodeaberturas.model.Abertura;
 
-    private final Context context;
-    private final ArrayList<Abertura> lista;
+import java.util.List;
 
-    public AberturaAdapter(Context context, ArrayList<Abertura> lista) {
-        super(context, 0, lista);
-        this.context = context;
+public class AberturaAdapter extends RecyclerView.Adapter<AberturaAdapter.AberturaViewHolder> {
+
+    private List<Abertura> lista;
+
+    public AberturaAdapter(List<Abertura> lista) {
         this.lista = lista;
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_abertura, parent, false);
-        }
+    public AberturaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_abertura, parent, false);
+        return new AberturaViewHolder(view);
+    }
 
+    @Override
+    public void onBindViewHolder(@NonNull AberturaViewHolder holder, int position) {
         Abertura abertura = lista.get(position);
 
-        TextView txtNome = convertView.findViewById(R.id.txtNome);
-        TextView txtCor = convertView.findViewById(R.id.txtCor);
-        TextView txtCategoria = convertView.findViewById(R.id.txtCategoria);
-        TextView txtObservacao = convertView.findViewById(R.id.txtObservacao);
+        holder.txtNome.setText(abertura.getNome());
+        holder.txtCor.setText("Cor: " + abertura.getCor());
+        holder.txtEco.setText("ECO: " + abertura.getEco());
+        holder.txtVariante.setText("Variante: " + abertura.getVariante());
+        holder.txtDificuldade.setText("Dificuldade: " + abertura.getDificuldade());
+    }
 
-        txtNome.setText(abertura.getNome());
-        txtCor.setText("Cor: " + abertura.getCor());
-        txtCategoria.setText("Categoria: " + abertura.getCategoria());
-        txtObservacao.setText("Obs: " + abertura.getObservacao());
+    @Override
+    public int getItemCount() {
+        return lista.size();
+    }
 
-        return convertView;
+    public void atualizarLista(List<Abertura> novaLista) {
+        this.lista = novaLista;
+        notifyDataSetChanged();
+    }
+
+    static class AberturaViewHolder extends RecyclerView.ViewHolder {
+        TextView txtNome, txtCor, txtEco, txtVariante, txtDificuldade;
+
+        public AberturaViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txtNome = itemView.findViewById(R.id.txtNome);
+            txtCor = itemView.findViewById(R.id.txtCor);
+            txtEco = itemView.findViewById(R.id.txtEco);
+            txtVariante = itemView.findViewById(R.id.txtVariante);
+            txtDificuldade = itemView.findViewById(R.id.txtDificuldade);
+        }
     }
 }
